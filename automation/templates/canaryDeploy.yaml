@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.canaryDeploy.name }}
-  namespace: grouptest1
+  name: {{ .Values.canaryDeploy.app_name }}
+  namespace: {{ .Values.namespace }}
 spec:
   selector:
     matchLabels:
@@ -20,7 +20,7 @@ spec:
         app: {{ .Values.canaryDeploy.app_name }}
     spec:
       containers:
-      - name: dockertest1
+      - name: canary-automation
         image: {{ .Values.canaryDeploy.image }}
         imagePullPolicy: {{ .Values.canaryDeploy.imagePullPolicy}}
         ports:

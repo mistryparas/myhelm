@@ -20,7 +20,7 @@ spec:
         app: {{ .Values.deployment.app_name }}
     spec:
       containers:
-      - name: dockertest1
+      - name: dev-automation
         image: {{ .Values.deployment.image }}
         imagePullPolicy: {{ .Values.deployment.imagePullPolicy }}
         ports:
