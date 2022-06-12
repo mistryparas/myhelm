@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: canary-automation
-        image: {{ .Values.canaryDeploy.image }}
+        image: {{ .Values.canaryDeploy.image }}:{{ .Values.canaryDeploy.tag }}
         imagePullPolicy: {{ .Values.canaryDeploy.imagePullPolicy}}
         ports:
         - containerPort: {{ .Values.canaryDeploy.containerPort }}
