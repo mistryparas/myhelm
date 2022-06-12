@@ -6,7 +6,7 @@ metadata:
 spec:
   ports:
   - port: {{ .Values.canaryService.port }}
-    nodePort: {{ .Values.canaryService.NodePort }}
+    nodePort: {{ .Values.canaryService.nodePort }}
     protocol: {{ .Values.canaryService.protocol }}
   selector:
     app: {{ .Values.canaryService.selector_app }}
