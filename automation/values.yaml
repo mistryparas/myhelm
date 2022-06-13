@@ -3,7 +3,7 @@ namespace: automation
 deployment:
   replicas: 4
   image: 192.168.56.250:8086/dockertest/automation
-  tag: 0.0.26
+  tag: 0.0.27
   app_name: automation
   imagePullPolicy: Always
   containerPort: 8080
@@ -31,7 +31,7 @@ canaryService:
 canaryDeploy:
   replicas: 0
   image: 192.168.56.250:8086/dockertest/automation
-  tag: 0.0.26
+  tag: 0.0.27
   app_name: canary-automation
   imagePullPolicy: Always
   containerPort: 8080
