@@ -1,0 +1,41 @@
+namespace: automation
+
+deployment:
+  replicas: 4
+  image: 192.168.56.250:8086/dockertest/automation
+  tag: 0.0.18
+  app_name: automation
+  imagePullPolicy: Always
+  containerPort: 8080
+  protocol: TCP
+
+service:
+  name: service-auto-dev
+  port: 8080
+  nodePort: 30050
+  selector_app: automation
+  service_type: NodePort
+  protocol: TCP
+  
+secret:
+  name: automation-repo
+
+canaryService:
+  name: canary-automation
+  port: 8080
+  nodePort: 30051
+  selector_app: canary-automation
+  service_type: NodePort
+  protocol: TCP
+
+canaryDeploy:
+  replicas: 0
+  image: 192.168.56.250:8086/dockertest/automation
+  tag: 0.0.19
+  app_name: canary-automation
+  imagePullPolicy: Always
+  containerPort: 8080
+  protocol: TCP
+
+serAccount:
+  name: automation-sa
