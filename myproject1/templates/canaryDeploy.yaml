@@ -20,7 +20,7 @@ spec:
         app: {{ .Values.canaryDeploy.app_name }}
     spec:
       containers:
-      - name: canary-automation
+      - name: canary-myproject1
         image: {{ .Values.canaryDeploy.image }}:{{ .Values.canaryDeploy.tag }}
         imagePullPolicy: {{ .Values.canaryDeploy.imagePullPolicy}}
         ports:
