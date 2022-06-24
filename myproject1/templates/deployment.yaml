@@ -20,7 +20,7 @@ spec:
         app: {{ .Values.deployment.app_name }}
     spec:
       containers:
-      - name: dev-automation
+      - name: dev-myproject1
         image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag }}
         imagePullPolicy: {{ .Values.deployment.imagePullPolicy }}
         ports:
