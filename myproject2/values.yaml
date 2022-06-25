@@ -3,7 +3,7 @@ namespace: myproject2
 deployment:
   replicas: 4
   image: 192.168.56.250:8082/repository/myproject2
-  tag: s0.0.1-20
+  tag: s0.0.1-21
   app_name: myproject2
   imagePullPolicy: Always
   containerPort: 8080
@@ -31,7 +31,7 @@ canaryService:
 canaryDeploy:
   replicas: 0
   image: 192.168.56.250:8082/repository/myproject2
-  tag: s0.0.1-20
+  tag: s0.0.1-21
   app_name: canary-myproject2
   imagePullPolicy: Always
   containerPort: 8080
