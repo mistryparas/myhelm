@@ -4,6 +4,7 @@ metadata:
   name:  {{ .Values.deployment.app_name }}
   namespace: {{ .Values.namespace }}
 spec:
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app:  {{ .Values.deployment.app_name }}
