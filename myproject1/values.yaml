@@ -1,7 +1,7 @@
 namespace: myproject1
 
 deployment:
-  replicas: 4
+  replicas: 2
   image: 192.168.56.250:8082/repository/myproject1
   tag: s0.0.1-5
   app_name: myproject1
