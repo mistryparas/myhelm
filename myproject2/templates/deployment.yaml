@@ -27,5 +27,12 @@ spec:
         ports:
         - containerPort: {{ .Values.deployment.containerPort }}
           protocol: {{ .Values.deployment.protocol }}
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
       imagePullSecrets:
         - name: {{ .Values.secret.name }}
+      volumes:
+        - name: varlog
+          emptyDir: {}  
+  
