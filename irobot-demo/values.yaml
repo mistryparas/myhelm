@@ -13,7 +13,7 @@ deployment:
   protocol: TCP
 
 service:
-  name: irobot-SVC
+  name: irobot-svc
   port: 8080
   nodePort: 30050
   protocol: TCP
