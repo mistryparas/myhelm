@@ -1,0 +1,21 @@
+# Default values for irobot-demo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment:
+  replicas: 2
+  image: mistryparas/devops-demo
+  version: v4.12
+  app_name: irobot-test
+  imagePullPolicy: Always
+  containerPort: 8080
+  protocol: TCP
+
+service:
+  name: irobot-SVC
+  port: 8080
+  nodePort: 30050
+  protocol: TCP
+  selector_app: irobot-test
+  service_type: NodePort
+  protocol: TCP
