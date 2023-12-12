@@ -6,7 +6,7 @@ namespace: default
 deployment:
   replicas: 2
   image: mistryparas/devops-demo
-  version: v4.12
+  version: v4.15
   app_name: irobot-test
   imagePullPolicy: Always
   containerPort: 8080
