@@ -1,0 +1,9 @@
+servicename: backend
+namespace: irobotdemo
+
+deployment:
+  image: mistryparas
+  version: v0.0.2
+
+service:
+  type: NodePort

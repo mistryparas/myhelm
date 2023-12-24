@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: {{ .Values.servicename }}
+  name: {{ .Values.servicename }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: {{ .Values.servicename }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        service: {{ .Values.servicename }}
+    spec:
+      containers:
+        - image: {{ .Values.deployment.image }}:{{ .Values.deployment.version }}
+          imagePullPolicy: ""
+          name: {{ .Values.servicename }}
+          resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+status: {}

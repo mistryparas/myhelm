@@ -1,0 +1,22 @@
+servicename: nginx
+namespace: irobotdemo
+
+deployment:
+  image: mistryparas/nginx
+  version: v0.0.2
+  imagePullPolicy: Always
+  protocol: TCP
+
+service:
+  name: nginx
+  type: NodePort
+
+nginxpv:
+  pvname: nginx-pv
+  classname: nfs
+  nfspath: /irobot/nginx
+  nfsserver: 192.168.56.125
+
+nginxpvc:
+  pvcname: nginx-pvc
+  classname: nfs

@@ -1,0 +1,9 @@
+servicename: frontend
+namespace: irobotdemo 
+
+deployment:
+  image: mistryparas/frontend
+  version: v0.0.2
+
+service:
+  type: NodePort

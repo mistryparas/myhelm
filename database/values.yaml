@@ -1,0 +1,23 @@
+servicename: database
+namespace: irobotdemo
+
+
+deployment:
+  image: mistryparas/database
+  version: v0.0.2
+  imagePullPolicy: Always
+  protocol: TCP
+
+service:
+  name: nginx
+  type: NodePort
+
+databasepv:
+  pvname: database-pv
+  classname: nfs
+  nfspath: /irobot/database
+  nfsserver: 192.168.56.125
+
+databasepvc:
+  pvcname: database-pvc
+  classname: nfs
